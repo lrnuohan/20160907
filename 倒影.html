@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{padding:0; margin:0;}
+        body{background: #000000;}
+        .moon{width:100px; height:100px; background:#fff; border-radius: 50%; box-shadow:0 0 15px #fff; position: absolute; right: 100px; top:0;}
+        .box{width:200px; height:300px; margin:100px auto; position: relative;}
+        .box img{width:200px; height:300px; position: absolute; top:0; left:0;}
+        .box span{width:200px; height:300px; position: absolute; top:310px; left:0; background: url("666.png") no-repeat; background-size: 100%; -webkit-transform: scale(1,-1);-webkit-mask: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));}
+    </style>
+</head>
+<body>
+    <div class="moon"></div>
+    <div class="box">
+        <img src="666.png">
+        <span></span>
+    </div>
+</body>
+</html>

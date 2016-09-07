@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{width:260px; height: 260px; margin:200px auto; background:plum; position: relative; -webkit-transform: scale(6,6); opacity: 0; display: none;}
+        .box .msg{width:260px; height:100px; position: absolute; top:70px;}
+        .box a{width:30px; height:30px; border-radius: 6px; background:#999; position: absolute; text-decoration: none; color: #fff; font-size: 30px;line-height:30px; text-align: center;right: 0; }
+    </style>
+    <script>
+        window.onload=function(){
+            var oLogin=document.querySelector('.login');
+            var oBox=document.querySelector('.box');
+            var oClose=document.querySelector('.close');
+            oLogin.onclick=function(){
+                oBox.style.display='block';
+                oBox.style.WebkitTransition='1s all ease';
+                setTimeout(function(){
+                    oBox.style.opacity=1;
+                    oBox.style.WebkitTransform='scale(1,1)';
+                },0);
+            };
+            oClose.onclick=function(){
+                oBox.style.opacity=0;
+                oBox.style.WebkitTransform='scale(6,6)';
+
+                function tranEnd(){
+                    oBox.removeEventListener('transitionend',tranEnd,false);
+                    oBox.style.display='none';
+                }
+
+                oBox.addEventListener('transitionend',tranEnd,false);
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="button" class="login" value="登录">
+    <div class="box">
+        <a href="javascript:;" class="close">×</a>
+        <div class="msg">
+            用户名：<input type="user" class="user"><br /><br />
+            密 码：<input type="password" class="pass"><br /><br />
+            <input type="button" class="btn" value="登录">
+        </div>
+    </div>
+</body>
+</html>
